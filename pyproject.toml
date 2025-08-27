@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "rpa-dolar-poc"
+version = "0.1.0"
+description = "POC cotacao dolar"
+authors = ["Alexandre Miranda <alexandre.pires@nagem.com.br>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "rpa_dolar_poc", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+requests = ">=2.32.5,<3.0.0"
+typer = {extras = ["all"], version = ">=0.16.1,<0.17.0"}
+pydantic-settings = "^2.10.1"
+python-dotenv = "^1.1.1"
+
+[tool.poetry.scripts]
+rpa-dolar = "rpa_dolar_poc.__main__:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
